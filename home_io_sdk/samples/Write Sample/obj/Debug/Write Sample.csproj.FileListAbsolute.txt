@@ -1,0 +1,2 @@
+C:\Users\Bruno\Desktop\home_io_sdk\samples\Write Sample\bin\Debug\Write Sample.exe.config
+D:\TCC\home_io_sdk\samples\Write Sample\bin\Debug\Write Sample.exe.config

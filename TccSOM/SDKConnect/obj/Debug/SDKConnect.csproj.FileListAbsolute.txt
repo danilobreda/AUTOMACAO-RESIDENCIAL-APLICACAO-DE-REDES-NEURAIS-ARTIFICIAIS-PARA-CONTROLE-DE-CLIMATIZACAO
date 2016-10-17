@@ -1,0 +1,10 @@
+D:\TCC\TccSOM\SDKConnect\bin\Debug\SDKConnect.exe.config
+D:\TCC\TccSOM\SDKConnect\bin\Debug\SDKConnect.exe
+D:\TCC\TccSOM\SDKConnect\bin\Debug\SDKConnect.pdb
+D:\TCC\TccSOM\SDKConnect\bin\Debug\EngineIO.dll
+D:\TCC\TccSOM\SDKConnect\obj\Debug\SDKConnect.csprojResolveAssemblyReference.cache
+D:\TCC\TccSOM\SDKConnect\obj\Debug\SDKConnect.frmConsole.resources
+D:\TCC\TccSOM\SDKConnect\obj\Debug\SDKConnect.Properties.Resources.resources
+D:\TCC\TccSOM\SDKConnect\obj\Debug\SDKConnect.csproj.GenerateResource.Cache
+D:\TCC\TccSOM\SDKConnect\obj\Debug\SDKConnect.exe
+D:\TCC\TccSOM\SDKConnect\obj\Debug\SDKConnect.pdb

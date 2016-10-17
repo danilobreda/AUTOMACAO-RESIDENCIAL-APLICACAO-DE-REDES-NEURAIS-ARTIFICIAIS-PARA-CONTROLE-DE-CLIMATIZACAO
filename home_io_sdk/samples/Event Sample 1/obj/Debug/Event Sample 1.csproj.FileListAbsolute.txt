@@ -1,0 +1,7 @@
+D:\TCC\home_io_sdk\samples\Event Sample 1\bin\Debug\Event Sample 1.exe.config
+D:\TCC\home_io_sdk\samples\Event Sample 1\bin\Debug\Event Sample 1.exe
+D:\TCC\home_io_sdk\samples\Event Sample 1\bin\Debug\Event Sample 1.pdb
+D:\TCC\home_io_sdk\samples\Event Sample 1\bin\Debug\EngineIO.dll
+D:\TCC\home_io_sdk\samples\Event Sample 1\obj\Debug\Event Sample 1.csprojResolveAssemblyReference.cache
+D:\TCC\home_io_sdk\samples\Event Sample 1\obj\Debug\Event Sample 1.exe
+D:\TCC\home_io_sdk\samples\Event Sample 1\obj\Debug\Event Sample 1.pdb

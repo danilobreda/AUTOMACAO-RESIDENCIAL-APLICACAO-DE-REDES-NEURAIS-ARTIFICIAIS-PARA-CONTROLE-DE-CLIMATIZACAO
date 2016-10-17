@@ -1,0 +1,6 @@
+D:\TCC\home_io_sdk\samples\Event Sample 2\bin\Debug\Event Sample 2.exe.config
+D:\TCC\home_io_sdk\samples\Event Sample 2\bin\Debug\Event Sample 2.exe
+D:\TCC\home_io_sdk\samples\Event Sample 2\bin\Debug\Event Sample 2.pdb
+D:\TCC\home_io_sdk\samples\Event Sample 2\bin\Debug\EngineIO.dll
+D:\TCC\home_io_sdk\samples\Event Sample 2\obj\Debug\Event Sample 2.exe
+D:\TCC\home_io_sdk\samples\Event Sample 2\obj\Debug\Event Sample 2.pdb
