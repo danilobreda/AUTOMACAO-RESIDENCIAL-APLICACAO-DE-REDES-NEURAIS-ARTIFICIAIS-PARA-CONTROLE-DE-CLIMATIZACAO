@@ -53,17 +53,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DadosMemoryEnergia.cs" />
-    <Compile Include="DadosMemoryTemperatura.cs" />
-    <Compile Include="DadosMemoryClima.cs" />
-    <Compile Include="DadosMemoryDateTime.cs" />
+    <Compile Include="GlobalObjects.cs" />
+    <Compile Include="Models\DadosMemory.cs" />
+    <Compile Include="Models\DadosMemoryEnergia.cs" />
+    <Compile Include="Models\DadosMemoryTemperatura.cs" />
+    <Compile Include="Models\DadosMemoryClima.cs" />
+    <Compile Include="Models\DadosMemoryDateTime.cs" />
+    <Compile Include="Factory\FactoryClima.cs" />
+    <Compile Include="Factory\FactoryDateTime.cs" />
+    <Compile Include="Factory\FactoryEnergia.cs" />
+    <Compile Include="Factory\FactoryTemperatura.cs" />
     <Compile Include="frmConsole.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmConsole.Designer.cs">
       <DependentUpon>frmConsole.cs</DependentUpon>
     </Compile>
-    <Compile Include="IDadosMemory.cs" />
+    <Compile Include="Models\Interface\IDadosMemory.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmConsole.resx">
