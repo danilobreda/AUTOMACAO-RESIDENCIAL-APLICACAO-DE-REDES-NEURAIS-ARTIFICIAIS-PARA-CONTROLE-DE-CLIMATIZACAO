@@ -27,8 +27,7 @@ namespace SDKConnect.Factory
             obj.tempL = tempL;
             obj.tempM = tempM;
             obj.tempN = tempN;
-
-            obj.DataAlteracao = GlobalObjects.DateTimeHouse;
+            
             return obj;
         }
     }

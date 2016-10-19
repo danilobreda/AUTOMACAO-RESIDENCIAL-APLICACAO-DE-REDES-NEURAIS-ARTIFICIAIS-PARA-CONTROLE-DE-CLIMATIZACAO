@@ -22,8 +22,7 @@ namespace SDKConnect.Factory
             obj.dewpoint = dewpoint;
             obj.windms = windms;
             obj.cloudiness = cloudiness;
-
-            obj.DataAlteracao = GlobalObjects.DateTimeHouse;
+            
             return obj;
         }
     }

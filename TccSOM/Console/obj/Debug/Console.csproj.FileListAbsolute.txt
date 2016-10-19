@@ -1,0 +1,11 @@
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\Console\bin\Debug\Console.exe.config
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\Console\bin\Debug\Console.exe
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\Console\bin\Debug\Console.pdb
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\Console\bin\Debug\NeuralSOM.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\Console\bin\Debug\SDKConnect.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\Console\bin\Debug\EngineIO.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\Console\bin\Debug\NeuralSOM.pdb
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\Console\bin\Debug\SDKConnect.pdb
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\Console\obj\Debug\Console.csprojResolveAssemblyReference.cache
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\Console\obj\Debug\Console.exe
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\Console\obj\Debug\Console.pdb

@@ -9,7 +9,7 @@ namespace SDKConnect.Models
 {
     public class DadosMemoryTemperatura : IDadosMemory
     {
-        public DateTime DataAlteracao { get; set; }
+        //public DateTime DataAlteracao { get; set; }
 
         public float tempA { get; set; }
         public float tempB { get; set; }

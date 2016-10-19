@@ -9,7 +9,7 @@ namespace SDKConnect.Models
 {
     public class DadosMemoryEnergia : IDadosMemory
     {
-        public DateTime DataAlteracao { get; set; }
+        //public DateTime DataAlteracao { get; set; }
 
         public float gastoAtual { get; set; }
     }

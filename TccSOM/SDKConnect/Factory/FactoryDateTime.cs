@@ -12,11 +12,8 @@ namespace SDKConnect.Factory
         public static DadosMemoryDateTime UpdateValueDateTime(DateTime value)
         {
             DadosMemoryDateTime obj = new DadosMemoryDateTime();
+            obj.datahora = value;
 
-            if (obj.datahora != value)
-                obj.datahora = value;
-
-            obj.DataAlteracao = GlobalObjects.DateTimeHouse;
             return obj;
         }
     }

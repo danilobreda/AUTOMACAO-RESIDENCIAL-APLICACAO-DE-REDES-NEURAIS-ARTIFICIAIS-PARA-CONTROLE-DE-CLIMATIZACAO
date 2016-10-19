@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C953F3BF-2947-4106-82DA-7F17D31E09A2}</ProjectGuid>
-    <OutputType>WinExe</OutputType>
+    <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>SDKConnect</RootNamespace>
     <AssemblyName>SDKConnect</AssemblyName>
@@ -53,7 +53,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="GlobalObjects.cs" />
     <Compile Include="Models\DadosMemory.cs" />
     <Compile Include="Models\DadosMemoryEnergia.cs" />
     <Compile Include="Models\DadosMemoryTemperatura.cs" />
@@ -63,18 +62,13 @@
     <Compile Include="Factory\FactoryDateTime.cs" />
     <Compile Include="Factory\FactoryEnergia.cs" />
     <Compile Include="Factory\FactoryTemperatura.cs" />
-    <Compile Include="frmConsole.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmConsole.Designer.cs">
-      <DependentUpon>frmConsole.cs</DependentUpon>
-    </Compile>
     <Compile Include="Models\Interface\IDadosMemory.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="Models\Termostato.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmConsole.resx">
-      <DependentUpon>frmConsole.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="Simulation.cs" />
+    <Compile Include="SimulationInput.cs" />
+    <Compile Include="SimulationMemory.cs" />
+    <Compile Include="SimulationOutput.cs" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

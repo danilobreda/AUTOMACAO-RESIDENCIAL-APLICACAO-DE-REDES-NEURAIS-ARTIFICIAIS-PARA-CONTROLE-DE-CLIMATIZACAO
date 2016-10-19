@@ -9,7 +9,7 @@ namespace SDKConnect.Models
 {
     public class DadosMemoryDateTime : IDadosMemory
     {
-        public DateTime DataAlteracao { get; set; }
+        //public DateTime DataAlteracao { get; set; }
 
         public DateTime datahora { get; set; }
     }

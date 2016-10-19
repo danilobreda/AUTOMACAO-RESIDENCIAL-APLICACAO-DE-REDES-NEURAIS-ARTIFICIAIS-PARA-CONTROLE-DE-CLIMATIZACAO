@@ -9,7 +9,7 @@ namespace SDKConnect.Models
 {
     public class DadosMemoryClima : IDadosMemory
     {
-        public DateTime DataAlteracao { get; set; }
+        //public DateTime DataAlteracao { get; set; }
 
         public float longitude { get; set; }
         public float latitude { get; set; }

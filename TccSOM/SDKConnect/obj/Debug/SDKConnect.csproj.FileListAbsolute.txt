@@ -8,13 +8,12 @@ D:\TCC\TccSOM\SDKConnect\obj\Debug\SDKConnect.Properties.Resources.resources
 D:\TCC\TccSOM\SDKConnect\obj\Debug\SDKConnect.csproj.GenerateResource.Cache
 D:\TCC\TccSOM\SDKConnect\obj\Debug\SDKConnect.exe
 D:\TCC\TccSOM\SDKConnect\obj\Debug\SDKConnect.pdb
-C:\Users\bredi\Desktop\TCC\TCC\TccSOM\SDKConnect\bin\Debug\SDKConnect.exe.config
-C:\Users\bredi\Desktop\TCC\TCC\TccSOM\SDKConnect\obj\Debug\SDKConnect.exe
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\SDKConnect\obj\Debug\SDKConnect.pdb
-C:\Users\bredi\Desktop\TCC\TCC\TccSOM\SDKConnect\bin\Debug\SDKConnect.exe
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\SDKConnect\bin\Debug\SDKConnect.pdb
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\SDKConnect\bin\Debug\EngineIO.dll
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\SDKConnect\obj\Debug\SDKConnect.csprojResolveAssemblyReference.cache
-C:\Users\bredi\Desktop\TCC\TCC\TccSOM\SDKConnect\obj\Debug\SDKConnect.frmConsole.resources
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\SDKConnect\obj\Debug\SDKConnect.Properties.Resources.resources
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\SDKConnect\obj\Debug\SDKConnect.csproj.GenerateResource.Cache
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\SDKConnect\bin\Debug\SDKConnect.dll.config
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\SDKConnect\bin\Debug\SDKConnect.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\SDKConnect\obj\Debug\SDKConnect.dll

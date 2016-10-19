@@ -8,6 +8,6 @@ namespace SDKConnect.Models.Interface
 {
     public interface IDadosMemory
     {
-        DateTime DataAlteracao { get; set; }
+        //DateTime DataAlteracao { get; set; }
     }
 }

@@ -14,8 +14,7 @@ namespace SDKConnect.Factory
             DadosMemoryEnergia obj = new DadosMemoryEnergia();
 
             obj.gastoAtual = gastoatual;
-
-            obj.DataAlteracao = GlobalObjects.DateTimeHouse;
+            
             return obj;
         }
     }
