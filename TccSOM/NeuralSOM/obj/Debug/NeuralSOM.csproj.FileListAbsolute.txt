@@ -1,6 +1,5 @@
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\NeuralSOM\bin\Debug\NeuralSOM.dll
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\NeuralSOM\bin\Debug\NeuralSOM.pdb
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\NeuralSOM\bin\Debug\encog-core-cs.dll
-C:\Users\bredi\Desktop\TCC\TCC\TccSOM\NeuralSOM\obj\Debug\NeuralSOM.csprojResolveAssemblyReference.cache
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\NeuralSOM\obj\Debug\NeuralSOM.dll
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\NeuralSOM\obj\Debug\NeuralSOM.pdb

@@ -9,7 +9,31 @@ namespace SDKConnect
 {
     public class SimulationOutput : IDisposable
     {
+        #region D
+        public void LigarHeater_D()
+        {
+            UpdateBit(44, true);
+        }
+        public void DesligarHeater_D()
+        {
+            UpdateBit(44, false);
+        }
 
+        public void AbrirJanela_D()
+        {
+            UpdateBit(43, false);
+            UpdateBit(42, true);
+
+        }
+        public void FecharJanela_D()
+        {
+            UpdateBit(42, false);
+            UpdateBit(43, true);
+
+        }
+        #endregion
+
+        #region E
         public void LigarHeater_E()
         {
             UpdateBit(57, true);
@@ -31,6 +55,7 @@ namespace SDKConnect
             UpdateBit(56, true);
 
         }
+        #endregion
 
         private void UpdateBit(int endereco, bool estado)
         {
@@ -39,7 +64,7 @@ namespace SDKConnect
             if (elemento.Value != estado)
             {
                 elemento.Value = estado;
-                MemoryMap.Instance.Update();//update dos registros
+                MemoryMap.Instance.Update();//update dos registros novamento para update nos dados alterados
             }
         }
 

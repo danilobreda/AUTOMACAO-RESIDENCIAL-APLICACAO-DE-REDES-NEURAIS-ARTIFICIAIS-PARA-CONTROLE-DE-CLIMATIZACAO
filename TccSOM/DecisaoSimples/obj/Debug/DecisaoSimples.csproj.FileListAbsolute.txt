@@ -1,0 +1,4 @@
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\DecisaoSimples\bin\Debug\DecisaoSimples.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\DecisaoSimples\bin\Debug\DecisaoSimples.pdb
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\DecisaoSimples\obj\Debug\DecisaoSimples.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\DecisaoSimples\obj\Debug\DecisaoSimples.pdb
