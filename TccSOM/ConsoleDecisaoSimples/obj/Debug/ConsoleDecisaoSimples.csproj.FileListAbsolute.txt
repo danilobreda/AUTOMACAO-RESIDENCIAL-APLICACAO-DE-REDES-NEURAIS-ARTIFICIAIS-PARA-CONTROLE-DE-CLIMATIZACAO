@@ -11,3 +11,6 @@ C:\Users\bredi\Desktop\TCC\TCC\TccSOM\Console\bin\Debug\SDKConnect.pdb
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\Console\obj\Debug\ConsoleDecisaoSimples.csprojResolveAssemblyReference.cache
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\Console\obj\Debug\ConsoleDecisaoSimples.exe
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\Console\obj\Debug\ConsoleDecisaoSimples.pdb
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleDecisaoSimples\bin\Debug\ConsoleDecisaoSimples.exe.config
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleDecisaoSimples\obj\Debug\ConsoleDecisaoSimples.exe
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleDecisaoSimples\obj\Debug\ConsoleDecisaoSimples.pdb

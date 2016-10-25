@@ -13,3 +13,4 @@ C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\bin\Debug\MathNet.Nume
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\obj\Debug\HomeIOSimpleCapture.csprojResolveAssemblyReference.cache
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\obj\Debug\HomeIOSimpleCapture.exe
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\obj\Debug\HomeIOSimpleCapture.pdb
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\bin\Debug\encog-core-cs.dll

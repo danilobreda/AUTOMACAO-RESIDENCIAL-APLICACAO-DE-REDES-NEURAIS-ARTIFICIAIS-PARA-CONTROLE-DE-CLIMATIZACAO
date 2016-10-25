@@ -21,9 +21,12 @@ namespace ConsoleRedeSOM
     {
         static void Main(string[] args)
         {
+            BasicMLDataSet data_training = new BasicMLDataSet();
+            Random rdn = new Random();
+            ////////////////////////////////////////////////////////////////////////////
 
             //simulação de dados por arquivo:
-            var neuralFile = File.ReadAllLines(@"C:\Users\bredi\Desktop\TCC\TCC\neural.txt");
+            var neuralFile = File.ReadAllLines(@"C:\Users\bredi\Desktop\TCC\TCC\neural_1.txt");
             List<string> NeuralList = new List<string>(neuralFile);
 
             double[][] entradafull = new double[NeuralList.Count][];
@@ -38,9 +41,9 @@ namespace ConsoleRedeSOM
                 {
                     //System.Convert.ToDouble(t[0]),//hora
                     System.Convert.ToDouble(t[1]),//tempA
-                    System.Convert.ToDouble(t[2]),//setA
-                    System.Convert.ToDouble(t[3]),//tempB
-                    System.Convert.ToDouble(t[4])//setB
+                    System.Convert.ToDouble(t[2])//setA
+                    //System.Convert.ToDouble(t[3]),//tempB
+                    //System.Convert.ToDouble(t[4])//setB
                 };
                 entradafull[i] = entrada;
 
@@ -57,56 +60,190 @@ namespace ConsoleRedeSOM
 
                 double[] saida = new double[]
                 {
-                    System.Convert.ToDouble(t[5]),//saidaA
-                    System.Convert.ToDouble(t[6])//saidaB
+                    System.Convert.ToDouble(t[5])//saidaA
+                    //System.Convert.ToDouble(t[6])//saidaB
                 };
 
                 saidafull[i] = saida;
                 i++;
+
+                data_training.Add(new BasicMLData(entrada), null);
             }
 
-            IMLDataSet data_training = new BasicMLDataSet(entradafull, saidafull);
+            //IMLDataSet data_training = new BasicMLDataSet(entradafull, saidafull);//ANTIGO COM SAIDA            
 
             //////////////////////////////////////////////////////////
 
-            int N_entradas = 4;
-            //int N_saidas = 2;
-            int tamanho_X = 100;
-            int tamanho_Y = 100;
+            int N_entradas = 2;
+            int tamanho_X = 100;//100
+            int tamanho_Y = 100;//100
+            int N_saidas = tamanho_X * tamanho_Y;
 
             int interacoesPlanejada = 1000;
-            int vizinho_inicial = 50;
-            int vizinho_final = 1;
+            int vizinho_inicial = 50;//50
+            int vizinho_final = 5;
             double rate_inicial = 1;
             double rate_final = 0.01;
 
             //Criação de rede SOM.(número de entradas, número de saídas)
-            //SOMNetwork network = new SOMNetwork(N_entradas, N_saidas);
-            SOMNetwork network = new SOMNetwork(N_entradas, tamanho_X * tamanho_Y);
+            SOMNetwork network = new SOMNetwork(N_entradas, N_saidas);
             network.Reset();
 
             //Criação da função de ativação.(função gaussiana 2D, largura da rede, altura da rede)
-            NeighborhoodRBF gaussian = new NeighborhoodRBF(RBFEnum.Gaussian, tamanho_X, tamanho_Y);
+            NeighborhoodRBF gaussian = new NeighborhoodRBF(RBFEnum.MexicanHat, tamanho_X, tamanho_Y);
 
             //(rede neural, taxa de aprendizado, conjunto de treinamento, função de vizinhança)
-            BasicTrainSOM train = new BasicTrainSOM(network, 0.01, data_training, gaussian);
+            BasicTrainSOM train = new BasicTrainSOM(network, 0.01, null, gaussian);
             train.ForceWinner = false;
             train.SetAutoDecay(interacoesPlanejada, rate_inicial, rate_final, vizinho_inicial, vizinho_final);
 
+            //TREINAMENTO RANDOMICO:
             for (int decay = 0; decay < interacoesPlanejada; decay++)
             {
+                var idx = int.Parse(Math.Round(rdn.NextDouble() * saidafull.Length).ToString()) - 1;
+                if (idx == -1)
+                    idx = 0;
+                var data = data_training[idx].Input;
+                train.TrainPattern(data);
                 train.AutoDecay();
+                Console.WriteLine(string.Format("Epoch {0}, Rate: {1}, Radius: {2}, Error: {3}", decay, train.LearningRate, train.Neighborhood.Radius, train.Error));
             }
 
-            for (int tx = 0; tx < (interacoesPlanejada * 1000); tx++)
+            /*for (int tx = 0; tx < interacoesPlanejada; tx++)
             {
+                train.Iteration();
                 train.AutoDecay();
+                Console.WriteLine(string.Format("Epoch {0}, Rate: {1}, Radius: {2}, Error: {3}", i, train.LearningRate, train.Neighborhood.Radius, train.Error));
+            }*/
+
+            //////////////////////////////////////////////////////////
+            //arquivo visual//////////////////////////////////////////////////////////
+
+            string[,] arrayprint = new string[tamanho_X, tamanho_Y];
+
+
+            for (int x = 0; x < tamanho_X; x++)
+            {
+                for (int y = 0; y < tamanho_Y; y++)
+                {
+                    arrayprint[x, y] = "  ";
+                }
             }
 
+            /*for (int TempA = 15; TempA < 25; TempA++)
+            {
+                for (int SetA = 15; SetA < 25; SetA++)
+                {
+                    for (int TempB = 15; TempB < 25; TempB++)
+                    {
+                        for (int SetB = 15; SetB < 25; SetB++)
+                        {
+                            BasicMLData dataentradateste = new BasicMLData(new double[] { TempA, SetA, TempB, SetB });
+                            var retorno = network.Classify(dataentradateste);
+                            //Console.WriteLine(retorno + " ||| SetA: " + SetA + " | TempA: " + TempA + " ||| SetB: " + 20 + " | TempB: " + 0);
+                            var tuple = convertToXY(retorno, tamanho_X, tamanho_Y);
+                            var array_v = arrayprint[tuple.Item1, tuple.Item2];
+                            if(array_v == "  ")
+                            {
+                                string saida = "";
+                                if(TempA >= SetA)
+                                    saida += "a";
+                                else if(TempA < SetA)
+                                    saida += "A";
+                                else
+                                    saida += "#";
+
+                                if (TempB >= SetB)
+                                    saida += "b";
+                                else if (TempB < SetB)
+                                    saida += "B";
+                                else
+                                    saida += "#";
+
+                                arrayprint[tuple.Item1, tuple.Item2] = saida;
+                            }
+                        }
+                    }
+
+                }
+            }*/
+
+            List<int> Lista_0 = new List<int>();
+            List<int> Lista_1 = new List<int>();
+            
+            for (int TempA = -49; TempA < 50; TempA++)
+            {
+                for (int SetA = -49; SetA < 50; SetA++)
+                {                    
+                    BasicMLData dataentradateste = new BasicMLData(new double[] { Normalizacao.Norm_Temp(TempA), Normalizacao.Norm_Temp(SetA) });
+                    var retorno = network.Classify(dataentradateste);
+                    //Console.WriteLine(retorno + " ||| SetA: " + SetA + " | TempA: " + TempA + " ||| SetB: " + 20 + " | TempB: " + 0);
+                    var tuple = convertToXY(retorno, tamanho_X, tamanho_Y);
+                    var array_v = arrayprint[tuple.Item1, tuple.Item2];
+                    if (array_v == "  ")
+                    {
+                        string saida = " ";
+                        if (TempA >= SetA)
+                        {
+                            if (Lista_1.Contains(retorno))
+                            {
+                                saida += "#";
+                            }
+                            else
+                            {
+                                Lista_0.Add(retorno);
+                                saida += "0";
+                            }
+                        }
+                        else if (TempA < SetA)
+                        {
+                            if (Lista_0.Contains(retorno))
+                            {
+                                saida += "#";
+                            }
+                            else
+                            {
+                                Lista_1.Add(retorno);
+                                saida += "1";
+                            }
+                        }
+                        else
+                            saida += "#";
+
+                        arrayprint[tuple.Item1, tuple.Item2] = saida;
+                    }
+                }
+            }
+
+
+            StringBuilder fileContents = new StringBuilder();
+            for (int x = 0; x < tamanho_X; x++)
+            {
+                for (int y = 0; y < tamanho_Y; y++)
+                {
+                    fileContents.Append(arrayprint[x, y]);
+                }
+                fileContents.AppendLine("|");
+            }
+            File.WriteAllText(@"C:\Users\bredi\Documents\mapaneural.txt", fileContents.ToString());
+
+            //////////////////////////////////////////////////////////
+            ////salvar network:
+
+            string path = Path.Combine(@"C:\Users\bredi\Desktop\TCC\TCC", "redeneural" + DateTime.Now.Ticks + ".txt");
+            if (File.Exists(path))
+                File.Delete(path);
+
+            FileStream fs = new FileStream(path , FileMode.CreateNew, FileAccess.Write);
+            PersistSOM persistSOM = new PersistSOM();
+            persistSOM.Save(fs, network);
+            fs.Close();
+
+            //////////////////////////////////////////////////////////
             //testes//////////////////////////////////////////////////////////
             DateTime datahora_atual = DateTime.MinValue;
 
-            /*do
+            do
             {
                 DateTime datahora = Simulation.Memory.Get().dmDateTime.datahora;
                 var Dados_D = Simulation.Input.Termostato_D();
@@ -120,99 +257,39 @@ namespace ConsoleRedeSOM
                     double TempA = Normalizacao.Norm_Temp(Dados_D.Temperatura);
                     double SetA = Normalizacao.Norm_Temp(Dados_D.SetPoint);
 
-                    double TempB = Normalizacao.Norm_Temp(Dados_E.Temperatura);
-                    double SetB = Normalizacao.Norm_Temp(Dados_E.SetPoint);
+                    //double TempB = Normalizacao.Norm_Temp(Dados_E.Temperatura);
+                    //double SetB = Normalizacao.Norm_Temp(Dados_E.SetPoint);
 
                     //BasicMLData dataentradateste = new BasicMLData(new double[] { hora, TempA, SetA, TempB, SetB });
-                    BasicMLData dataentradateste = new BasicMLData(new double[] { TempA, SetA, TempB, SetB });
+                    // BasicMLData dataentradateste = new BasicMLData(new double[] { TempA, SetA, TempB, SetB });
+                    BasicMLData dataentradateste = new BasicMLData(new double[] { TempA, SetA });
 
-                    var retornoA = network.Classify(dataentradateste);
-                    var retornoB = network.Winner(dataentradateste);
-                    if(retornoA > 5000)
+                    var retorno = network.Winner(dataentradateste);
+
+                    if(Lista_0.Contains(retorno))
                     {
                         //desligar
                         Simulation.Output.DesligarHeater_D();
                         Simulation.Output.DesligarHeater_E();
-                        Console.WriteLine(retornoA + " | OFF | " + (SetA - TempA).ToString("F") + " | " + (SetB - TempB).ToString("F") + " | ");
+                        Console.WriteLine(retorno + " | OFF | ");
                     }
-                    else
+                    else if(Lista_1.Contains(retorno))
                     {
                         //ligar
                         Simulation.Output.LigarHeater_D();
                         Simulation.Output.LigarHeater_E();
-                        Console.WriteLine(retornoA + " | ON | " + (SetA - TempA).ToString("F") + " | " + (SetB - TempB).ToString("F") + " | ");
+                        Console.WriteLine(retorno + " | ON | ");
                     }
-                }
-
-            }
-            while (true);*/
-
-            //////////////////////////////////////////
-            List<double> values = new List<double>();
-
-            for (int TempA = -10; TempA < 20; TempA++)
-            {
-                for (int SetA = 8; SetA < 16; SetA++)
-                {
-                    for (int TempB = -10; TempB < 20; TempB++)
+                    else
                     {
-                        for (int SetB = 8; SetB < 16; SetB++)
-                        {
-                            BasicMLData dataentradateste = new BasicMLData(new double[] { TempA, SetA, TempB, SetB });
-                            var retorno = network.Classify(dataentradateste);
-                            //Console.WriteLine(retorno + " ||| SetA: " + SetA + " | TempA: " + TempA + " ||| SetB: " + 20 + " | TempB: " + 0);
-                            if (values.Exists(x => x == retorno) == false)
-                            {
-                                values.Add(retorno);
-                            }
-                        }
+                        Console.WriteLine(retorno + " | OUT | ");
                     }
-
                 }
+
             }
+            while (true);
 
-            string[,] arrayprint = new string[100, 100];
-
-
-            for (int x = 0; x < 100; x++)
-            {
-                for (int y = 0; y < 100; y++)
-                {
-                    arrayprint[x, y] = " ";
-                }
-            }
-
-            foreach (var item in values.OrderByDescending(x => x))
-            {
-                int value = int.Parse(Math.Round(item, 0).ToString());
-                int x = value / 100;
-                int y = value - (x * 100);
-                arrayprint[x, y] = "#";
-            }
-
-            StringBuilder fileContents = new StringBuilder();
-            for (int x = 0; x < 100; x++)
-            {
-                for (int y = 0; y < 100; y++)
-                {
-
-                    fileContents.Append(arrayprint[x, y]);
-                }
-                fileContents.AppendLine("|");
-            }
-            File.WriteAllText(@"C:\Users\bredi\Documents\mapaneural.txt", fileContents.ToString());
-
-            //////////////////////////////////////////////////////////
-            ////salvar network:
-            /*FileStream fs = new FileStream(Path.Combine(@"C:\Users\bredi\Desktop\TCC\TCC", "redeneural.txt"), FileMode.CreateNew, FileAccess.Write);
-            PersistSOM persistSOM = new PersistSOM();
-            persistSOM.Save(fs, network);
-            fs.Close();*/
         }
-        
-
-
-
 
         /*private void Rede1()
         {
@@ -243,5 +320,13 @@ namespace ConsoleRedeSOM
             Console.WriteLine("Pattern 1 winner: " + network.Classify(data1));
             Console.WriteLine("Pattern 2 winner: " + network.Classify(data2));
         }*/
+        public static Tuple<int, int> convertToXY(int pos, int max_x, int max_y)
+        {
+            int x = int.Parse(Math.Floor((decimal)pos / max_x).ToString());            
+            int y = int.Parse(pos.ToString()) - (max_y * x);
+            if(x == -1)
+                x = 1;
+            return new Tuple<int, int>(x, y);
+        }
     }
-}
+  }

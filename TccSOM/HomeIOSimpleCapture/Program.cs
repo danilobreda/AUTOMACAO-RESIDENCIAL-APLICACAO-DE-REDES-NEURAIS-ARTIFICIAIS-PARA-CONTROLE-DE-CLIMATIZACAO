@@ -6,6 +6,10 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Encog;
+using Encog.ML.Data;
+using Encog.ML.Data.Versatile;
+using Encog.Util.Normalize.Output;
 
 namespace HomeIOSimpleCapture
 {
@@ -55,6 +59,8 @@ namespace HomeIOSimpleCapture
 
                         ListPoints.Add(p);
 
+                        Console.WriteLine(ListPoints.Count);
+
                         if (datahora.Hour == 23 && datahora.Minute == 59 && datahora.Second > 0)
                             break;
                     }
@@ -70,9 +76,7 @@ namespace HomeIOSimpleCapture
 
         public static double Norm_Temp(float value)
         {
-            value += 50;//-50* = 0
-            double max = 100;//50* = 100
-            double retorno = Math.Tanh(value / max);
+            double retorno = Normalize(value, -50, 50);//Math.Tanh(value / max);
             return retorno;
         }
         public static double Norm_Bool(bool value)
@@ -89,8 +93,22 @@ namespace HomeIOSimpleCapture
             total += value.Minute * 60;
             total += value.Second;
             const double max = 86400;
-            double retorno = Math.Tanh(total / max);
+            double retorno = Normalize(total, 0, max);// Math.Tanh(total / max);
             return retorno;
+        }
+
+        /// <summary>
+        /// Calculate a ranged mapped value(Normalize).
+        /// </summary>
+        /// <param name="value">The to map.</param>
+        /// <param name="min">The minimum that the value param can be.</param>
+        /// <param name="max">The maximum that the value param can be.</param>
+        /// <param name="hi">The high value to map into.</param>
+        /// <param name="lo">The low value to map into.</param>
+        /// <returns>The mapped value.</returns>
+        public static double Normalize(double value, double min, double max, double hi = 1, double lo = 0)
+        {
+            return ((value - min) / (max - min)) * (hi - lo) + lo;
         }
 
         public static void Salvar()
