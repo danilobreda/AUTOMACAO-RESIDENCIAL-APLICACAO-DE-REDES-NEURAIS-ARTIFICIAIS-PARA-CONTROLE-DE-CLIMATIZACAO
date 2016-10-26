@@ -13,7 +13,7 @@ using Encog.MathUtil;
 using System.IO;
 using SDKConnect;
 using DecisaoSimples;
-using ConsoleRedeSOM.Utilitarios;
+using SDKConnect.Normalizacao;
 
 namespace ConsoleRedeSOM
 {
@@ -81,9 +81,9 @@ namespace ConsoleRedeSOM
 
             int interacoesPlanejada = 1000;
             int vizinho_inicial = 50;//50
-            int vizinho_final = 5;
+            int vizinho_final = 1;
             double rate_inicial = 1;
-            double rate_final = 0.01;
+            double rate_final = 0.1;
 
             //Criação de rede SOM.(número de entradas, número de saídas)
             SOMNetwork network = new SOMNetwork(N_entradas, N_saidas);
@@ -249,7 +249,7 @@ namespace ConsoleRedeSOM
                 var Dados_D = Simulation.Input.Termostato_D();
                 var Dados_E = Simulation.Input.Termostato_E();
                 
-                if (datahora >= datahora_atual.AddSeconds(1))
+                if (datahora >= datahora_atual.AddSeconds(.5))
                 {
                     datahora_atual = datahora;
                     //double hora = Normalizacao.Norm_DataHoraSeg(datahora);

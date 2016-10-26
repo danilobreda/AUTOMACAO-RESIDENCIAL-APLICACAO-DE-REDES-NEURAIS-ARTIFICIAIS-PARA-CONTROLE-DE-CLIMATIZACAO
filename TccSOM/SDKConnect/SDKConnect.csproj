@@ -64,6 +64,7 @@
     <Compile Include="Factory\FactoryTemperatura.cs" />
     <Compile Include="Models\Interface\IDadosMemory.cs" />
     <Compile Include="Models\Termostato.cs" />
+    <Compile Include="Normalizacao\Normalizacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Simulation.cs" />
     <Compile Include="SimulationInput.cs" />
