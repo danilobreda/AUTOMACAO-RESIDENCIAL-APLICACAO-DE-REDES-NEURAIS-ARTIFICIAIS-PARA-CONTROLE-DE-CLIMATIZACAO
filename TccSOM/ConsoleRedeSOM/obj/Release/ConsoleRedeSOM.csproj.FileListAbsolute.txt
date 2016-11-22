@@ -1,0 +1,12 @@
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeSOM\bin\Release\ConsoleRedeSOM.exe.config
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeSOM\bin\Release\ConsoleRedeSOM.exe
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeSOM\bin\Release\ConsoleRedeSOM.pdb
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeSOM\bin\Release\DecisaoSimples.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeSOM\bin\Release\encog-core-cs.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeSOM\bin\Release\SDKConnect.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeSOM\bin\Release\EngineIO.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeSOM\bin\Release\DecisaoSimples.pdb
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeSOM\bin\Release\SDKConnect.pdb
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeSOM\obj\Release\ConsoleRedeSOM.csprojResolveAssemblyReference.cache
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeSOM\obj\Release\ConsoleRedeSOM.exe
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeSOM\obj\Release\ConsoleRedeSOM.pdb

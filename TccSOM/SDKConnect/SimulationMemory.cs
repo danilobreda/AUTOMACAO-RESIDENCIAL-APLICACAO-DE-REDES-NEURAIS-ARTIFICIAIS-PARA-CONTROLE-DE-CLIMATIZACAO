@@ -36,7 +36,7 @@ namespace SDKConnect
                 MemoryDateTime datahora = MemoryMap.Instance.GetDateTime(65, MemoryType.Memory);
                 _dateTimeHouse = datahora.Value;
 
-                if (_last_dm == null || _last_dm.dmDateTime.datahora.AddMilliseconds(milisegundosIntervalo) <= DateTimeHouse)
+                if (_last_dm == null || _last_dm.dmDateTime.DataHora.AddMilliseconds(milisegundosIntervalo) <= DateTimeHouse)
                 {
                     MemoryFloat latitude = MemoryMap.Instance.GetFloat(130, MemoryType.Memory);
                     MemoryFloat longitude = MemoryMap.Instance.GetFloat(131, MemoryType.Memory);

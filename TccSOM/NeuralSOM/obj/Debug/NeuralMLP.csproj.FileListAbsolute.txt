@@ -1,0 +1,9 @@
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\NeuralSOM\bin\Debug\NeuralMLP.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\NeuralSOM\bin\Debug\NeuralMLP.pdb
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\NeuralSOM\bin\Debug\encog-core-cs.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\NeuralSOM\bin\Debug\SDKConnect.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\NeuralSOM\bin\Debug\EngineIO.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\NeuralSOM\bin\Debug\SDKConnect.pdb
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\NeuralSOM\obj\Debug\NeuralMLP.csprojResolveAssemblyReference.cache
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\NeuralSOM\obj\Debug\NeuralMLP.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\NeuralSOM\obj\Debug\NeuralMLP.pdb

@@ -11,9 +11,11 @@ namespace SDKConnect.Factory
     {
         public static DadosMemoryDateTime UpdateValueDateTime(DateTime value)
         {
-            DadosMemoryDateTime obj = new DadosMemoryDateTime();
-            obj.datahora = value;
-
+            var obj = new DadosMemoryDateTime
+            {
+                DataHora = value,
+                DataHoraNormalizado = Normalizacao.Norm_DataHoraSeg(value)
+            };
             return obj;
         }
     }

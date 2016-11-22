@@ -13,7 +13,6 @@ using Encog.MathUtil;
 using System.IO;
 using SDKConnect;
 using DecisaoSimples;
-using SDKConnect.Normalizacao;
 
 namespace ConsoleRedeSOM
 {
@@ -245,7 +244,7 @@ namespace ConsoleRedeSOM
 
             do
             {
-                DateTime datahora = Simulation.Memory.Get().dmDateTime.datahora;
+                DateTime datahora = Simulation.Memory.Get().dmDateTime.DataHora;
                 var Dados_D = Simulation.Input.Termostato_D();
                 var Dados_E = Simulation.Input.Termostato_E();
                 
@@ -254,30 +253,24 @@ namespace ConsoleRedeSOM
                     datahora_atual = datahora;
                     //double hora = Normalizacao.Norm_DataHoraSeg(datahora);
 
-                    double TempA = Normalizacao.Norm_Temp(Dados_D.Temperatura);
-                    double SetA = Normalizacao.Norm_Temp(Dados_D.SetPoint);
-
-                    //double TempB = Normalizacao.Norm_Temp(Dados_E.Temperatura);
-                    //double SetB = Normalizacao.Norm_Temp(Dados_E.SetPoint);
-
                     //BasicMLData dataentradateste = new BasicMLData(new double[] { hora, TempA, SetA, TempB, SetB });
-                    // BasicMLData dataentradateste = new BasicMLData(new double[] { TempA, SetA, TempB, SetB });
-                    BasicMLData dataentradateste = new BasicMLData(new double[] { TempA, SetA });
+                    //BasicMLData dataentradateste = new BasicMLData(new double[] { TempA, SetA, TempB, SetB });
+                    BasicMLData dataentradateste = new BasicMLData(new double[] { Dados_D.TemperaturaNormalizado, Dados_D.SetPointNormalizado });
 
                     var retorno = network.Winner(dataentradateste);
 
                     if(Lista_0.Contains(retorno))
                     {
                         //desligar
-                        Simulation.Output.DesligarHeater_D();
-                        Simulation.Output.DesligarHeater_E();
+                        Simulation.Output.DesligarAquecedor_D();
+                        Simulation.Output.DesligarAquecedor_E();
                         Console.WriteLine(retorno + " | OFF | ");
                     }
                     else if(Lista_1.Contains(retorno))
                     {
                         //ligar
-                        Simulation.Output.LigarHeater_D();
-                        Simulation.Output.LigarHeater_E();
+                        Simulation.Output.LigarAquecedor_D();
+                        Simulation.Output.LigarAquecedor_E();
                         Console.WriteLine(retorno + " | ON | ");
                     }
                     else

@@ -1,10 +1,12 @@
-C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeMLP\obj\Debug\ConsoleRedeMLP.csprojResolveAssemblyReference.cache
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeMLP\bin\Debug\ConsoleRedeMLP.exe.config
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeMLP\bin\Debug\ConsoleRedeMLP.exe
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeMLP\bin\Debug\ConsoleRedeMLP.pdb
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeMLP\bin\Debug\encog-core-cs.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeMLP\bin\Debug\NeuralMLP.dll
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeMLP\bin\Debug\SDKConnect.dll
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeMLP\bin\Debug\EngineIO.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeMLP\bin\Debug\NeuralMLP.pdb
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeMLP\bin\Debug\SDKConnect.pdb
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeMLP\obj\Debug\ConsoleRedeMLP.csprojResolveAssemblyReference.cache
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeMLP\obj\Debug\ConsoleRedeMLP.exe
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeMLP\obj\Debug\ConsoleRedeMLP.pdb

@@ -53,6 +53,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datas\Conversor\PointsConvertor.cs" />
+    <Compile Include="Datas\Points.cs" />
+    <Compile Include="Datas\PointsConverted.cs" />
+    <Compile Include="Datas\PointsSaida.cs" />
     <Compile Include="Models\DadosMemory.cs" />
     <Compile Include="Models\DadosMemoryEnergia.cs" />
     <Compile Include="Models\DadosMemoryTemperatura.cs" />
@@ -63,7 +67,7 @@
     <Compile Include="Factory\FactoryEnergia.cs" />
     <Compile Include="Factory\FactoryTemperatura.cs" />
     <Compile Include="Models\Interface\IDadosMemory.cs" />
-    <Compile Include="Models\Termostato.cs" />
+    <Compile Include="Models\DadosTermostato.cs" />
     <Compile Include="Normalizacao\Normalizacao.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Simulation.cs" />
@@ -92,6 +96,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

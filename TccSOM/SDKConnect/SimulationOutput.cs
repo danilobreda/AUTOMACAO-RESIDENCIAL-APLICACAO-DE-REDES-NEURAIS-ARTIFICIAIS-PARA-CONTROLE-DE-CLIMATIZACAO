@@ -9,55 +9,79 @@ namespace SDKConnect
 {
     public class SimulationOutput : IDisposable
     {
+        #region A
+        public void LigarAquecedor_A()
+        {
+            AtualizarBit(9, true);
+        }
+        public void DesligarAquecedor_A()
+        {
+            AtualizarBit(9, false);
+        }
+        public bool Aquecedor_A()
+        {
+            MemoryMap.Instance.Update();//update dos registros
+            var elemento = MemoryMap.Instance.GetBit(9, MemoryType.Output);
+            return elemento.Value;
+        }
+        #endregion
+
         #region D
-        public void LigarHeater_D()
+        public void LigarAquecedor_D()
         {
-            UpdateBit(44, true);
+            AtualizarBit(44, true);
         }
-        public void DesligarHeater_D()
+        public void DesligarAquecedor_D()
         {
-            UpdateBit(44, false);
-        }
-
-        public void AbrirJanela_D()
+            AtualizarBit(44, false);
+        }        
+        public bool Aquecedor_D()
         {
-            UpdateBit(43, false);
-            UpdateBit(42, true);
-
-        }
-        public void FecharJanela_D()
-        {
-            UpdateBit(42, false);
-            UpdateBit(43, true);
-
+            MemoryMap.Instance.Update();//update dos registros
+            var elemento = MemoryMap.Instance.GetBit(44, MemoryType.Output);
+            return elemento.Value;
         }
         #endregion
 
         #region E
-        public void LigarHeater_E()
+        public void LigarAquecedor_E()
         {
-            UpdateBit(57, true);
+            AtualizarBit(57, true);
         }
-        public void DesligarHeater_E()
+        public void DesligarAquecedor_E()
         {
-            UpdateBit(57, false);
+            AtualizarBit(57, false);
         }
-
-        public void AbrirJanela_E()
+        public bool Aquecedor_E()
         {
-            UpdateBit(56, false);
-            UpdateBit(55, true);
-
-        }
-        public void FecharJanela_E()
-        {
-            UpdateBit(55, false);
-            UpdateBit(56, true);
-
+            MemoryMap.Instance.Update();//update dos registros
+            var elemento = MemoryMap.Instance.GetBit(57, MemoryType.Output);
+            return elemento.Value;
         }
         #endregion
 
-        private void UpdateBit(int endereco, bool estado)
+        #region G
+        public void LigarAquecedor_G()
+        {
+            AtualizarBit(86, true);
+            AtualizarBit(87, true);
+        }
+        public void DesligarAquecedor_G()
+        {
+            AtualizarBit(86, false);
+            AtualizarBit(87, false);
+        }
+
+        public bool Aquecedor_G()
+        {
+            MemoryMap.Instance.Update();//update dos registros
+            var elemento_1 = MemoryMap.Instance.GetBit(86, MemoryType.Output);
+            var elemento_2 = MemoryMap.Instance.GetBit(87, MemoryType.Output);
+            return (elemento_1.Value && elemento_2.Value);
+        }
+        #endregion
+
+        private void AtualizarBit(int endereco, bool estado)
         {
             MemoryMap.Instance.Update();//update dos registros
             MemoryBit elemento = MemoryMap.Instance.GetBit(endereco, MemoryType.Output);

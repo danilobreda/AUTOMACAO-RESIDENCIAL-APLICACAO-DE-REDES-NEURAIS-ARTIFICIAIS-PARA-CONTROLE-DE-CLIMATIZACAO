@@ -11,6 +11,7 @@ namespace SDKConnect.Models
     {
         //public DateTime DataAlteracao { get; set; }
 
-        public DateTime datahora { get; set; }
+        public DateTime DataHora { get; set; }
+        public double DataHoraNormalizado { get; set; }
     }
 }

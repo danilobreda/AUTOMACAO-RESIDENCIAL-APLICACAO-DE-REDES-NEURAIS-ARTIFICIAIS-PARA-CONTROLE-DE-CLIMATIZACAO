@@ -1,0 +1,9 @@
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\SDKConnect\bin\Release\SDKConnect.dll.config
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\SDKConnect\bin\Release\SDKConnect.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\SDKConnect\bin\Release\SDKConnect.pdb
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\SDKConnect\bin\Release\EngineIO.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\SDKConnect\obj\Release\SDKConnect.csprojResolveAssemblyReference.cache
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\SDKConnect\obj\Release\SDKConnect.Properties.Resources.resources
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\SDKConnect\obj\Release\SDKConnect.csproj.GenerateResource.Cache
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\SDKConnect\obj\Release\SDKConnect.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\SDKConnect\obj\Release\SDKConnect.pdb

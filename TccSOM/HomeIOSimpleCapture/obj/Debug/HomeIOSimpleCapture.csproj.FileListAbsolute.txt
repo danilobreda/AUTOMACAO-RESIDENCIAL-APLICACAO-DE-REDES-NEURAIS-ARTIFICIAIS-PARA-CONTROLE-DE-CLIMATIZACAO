@@ -3,14 +3,14 @@ C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\bin\Debug\HomeIOSimple
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\bin\Debug\HomeIOSimpleCapture.pdb
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\bin\Debug\DecisaoSimples.dll
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\bin\Debug\MathNet.Numerics.dll
-C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\bin\Debug\NeuralSOM.dll
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\bin\Debug\SDKConnect.dll
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\bin\Debug\EngineIO.dll
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\bin\Debug\DecisaoSimples.pdb
-C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\bin\Debug\NeuralSOM.pdb
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\bin\Debug\SDKConnect.pdb
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\bin\Debug\MathNet.Numerics.xml
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\obj\Debug\HomeIOSimpleCapture.csprojResolveAssemblyReference.cache
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\obj\Debug\HomeIOSimpleCapture.exe
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\obj\Debug\HomeIOSimpleCapture.pdb
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\bin\Debug\encog-core-cs.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\bin\Debug\NeuralMLP.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\bin\Debug\NeuralMLP.pdb

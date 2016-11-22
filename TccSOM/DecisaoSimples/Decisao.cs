@@ -41,16 +41,6 @@ namespace DecisaoSimples
             //nenhum deu certo... false
             return false;
         }
-
-        public static bool ResultadoJanela(float luminosidade, float tempComodo, float tempComodoSetada)
-        {
-
-            if (tempComodo < tempComodoSetada && luminosidade > 1.6f)
-                return true;
-
-
-            //nenhum deu certo... false
-            return false;
-        }
+        
     }
 }

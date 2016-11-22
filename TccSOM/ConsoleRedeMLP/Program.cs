@@ -1,200 +1,182 @@
-﻿using Encog.Engine.Network.Activation;
-using Encog.ML.Data.Basic;
-using Encog.Neural.Data.Basic;
-using Encog.Neural.Networks;
-using Encog.Neural.Networks.Layers;
-using Encog.Neural.Networks.Training.Propagation.Back;
-using Encog.Neural.Networks.Training.Propagation.Manhattan;
-using Encog.Neural.Networks.Training.Propagation.Resilient;
-using Encog.Neural.NeuralData;
+﻿using Encog.ML.Data.Basic;
+using NeuralMLP;
 using SDKConnect;
-using SDKConnect.Normalizacao;
+using SDKConnect.Datas;
+using SDKConnect.Datas.Conversor;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ConsoleRedeMLP
 {
     class Program
     {
-        static void Main(string[] args)
+        [STAThread]
+        static void Main()
         {
-            var neuralFile = File.ReadAllLines(@"C:\Users\bredi\Desktop\TCC\TCC\neural_3.txt");
-
-            List<string> NeuralList = new List<string>(neuralFile);
-
-            double[][] entradafull = new double[NeuralList.Count][];
-            double[][] saidafull = new double[NeuralList.Count][];
-
-
-            int i = 0;
-            foreach (var item in NeuralList)
+            do
             {
-                var t = item.Split(new string[] { "::" }, StringSplitOptions.None);
-
-                double[] entrada = new double[]
+                Console.Clear();
+                Console.WriteLine("MENU: \n 1 - Treinar \n 2 - Carregar Rede Neural \n 3 - Salvar Rede Neural \n 4 - Executar \n 0 - Sair");
+                var op = Console.ReadKey().KeyChar;
+                if (op == '1')//treinar
                 {
-                    System.Convert.ToDouble(t[0]),//hora
-                    System.Convert.ToDouble(t[1]),//tempA
-                    System.Convert.ToDouble(t[2]),//setA
-                    System.Convert.ToDouble(t[3]),//tempB
-                    System.Convert.ToDouble(t[4])//setB
-                };
-                entradafull[i] = entrada;
+                    using (var ofd = new OpenFileDialog() { Filter = "Arquivo Treino File|*.txt", Title = "Selecione o arquivo de treino: " })
+                    {
+                        if (ofd.ShowDialog() == DialogResult.OK)
+                        {
+                            using (var ofd2 = new OpenFileDialog() { Filter = "Arquivo Treino File|*.txt", Title = "Selecione o arquivo de treino: " })
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Aguarde...");
+                                var neuralFile_A = File.ReadAllLines(ofd.FileName);
+                                var pc_A = PointsConvertor.Converter(neuralFile_A);
 
-                int xA = 0;
-                int yA = 0;
-                if (System.Convert.ToDouble(t[5]) == 0)
-                {
-                    xA = 1;
-                    yA = 0;
+                                PointsConverted pc_B = null;
+                                if (ofd2.ShowDialog() == DialogResult.OK)
+                                {
+                                    var neuralFile_B = File.ReadAllLines(ofd2.FileName);
+                                    pc_B = PointsConvertor.Converter(neuralFile_B);
+                                }
+                                var inicio = DateTime.Now;
+                                MLP.Train(pc_A, pc_B);
+                                Console.WriteLine("Treino realizado com sucesso \n Inicio: " + inicio.ToLongTimeString() + " \n Fim: " + DateTime.Now.ToLongTimeString());
+                                Console.ReadKey();
+                            }
+                        }
+                    }
                 }
-                else
+                else if (op == '2')//carregar rede neural
                 {
-                    xA = 0;
-                    yA = 1;
+                    using (var ofd = new OpenFileDialog() { Filter = "MLP Files|*.mlp", Title = "Selecione o arquivo de rede neural: " })
+                    {
+                        if (ofd.ShowDialog() == DialogResult.OK)
+                        {
+                            try
+                            {
+                                Console.Clear();
+                                Console.WriteLine("Aguarde...");
+                                MLP.LoadNetwork(ofd.FileName);
+                                Console.WriteLine("Rede neural recarregada com sucesso.");
+                                Console.ReadKey();
+                            }
+                            catch (Exception)
+                            {
+                                Console.WriteLine("Erro na leitura dos dados.");
+                                Console.ReadKey();
+                            }
+                        }
+                    }
                 }
-
-                int xB = 0;
-                int yB = 0;
-                if (System.Convert.ToDouble(t[6]) == 0)
+                else if (op == '3')//salvar rede neural
                 {
-                    xB = 1;
-                    yB = 0;
+                    using (var ofd = new SaveFileDialog() { Filter = "MLP Files|*.mlp", Title = "Salve o arquivo de rede neural: " })
+                    {
+                        if (ofd.ShowDialog() == DialogResult.OK)
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Aguarde...");
+                            var retorno = MLP.SaveNetwork(ofd.FileName);
+                            Console.WriteLine("Arquivo salvo em: " + retorno);
+                            Console.ReadKey();
+                        }
+                    }
                 }
-                else
+                else if (op == '4')//executar simulação
                 {
-                    xB = 0;
-                    yB = 1;
+                    Console.Clear();
+                    Console.WriteLine("Aguarde...");
+                    Executa();
                 }
-
-                double[] saida = new double[]
-                {
-                    xA,
-                    yA,
-                    xB,
-                    yB
-
-                    //.Convert.ToDouble(t[5]),//A
-                    //System.Convert.ToDouble(t[6])//B
-                };
-
-                saidafull[i] = saida;
-                i++;
             }
-
-            int N_entradas = 4 + 1;//+1 hora
-            int N_saidas = 4;
-
-            INeuralDataSet trainingSet = new BasicNeuralDataSet(entradafull, saidafull);
-
-            BasicNetwork network = new BasicNetwork();
-            network.AddLayer(new BasicLayer(null, true, N_entradas));
-            network.AddLayer(new BasicLayer(new ActivationElliott(), true, 15));
-            network.AddLayer(new BasicLayer(new ActivationElliott(), true, 4));
-            network.AddLayer(new BasicLayer(new ActivationElliott(), false, N_saidas));
-            network.Structure.FinalizeStructure();
-            network.Reset();
-
-            ResilientPropagation train = new ResilientPropagation(network, trainingSet);
-            //ManhattanPropagation train = new ManhattanPropagation(network, trainingSet, 0.0001);
-            //Backpropagation train = new Backpropagation(network, trainingSet);
-
-            int epoch = 0;
+            while (true);
+        }
+        private static void Executa()
+        {
+            var datahora_atual = DateTime.MinValue;
             do
             {
-                train.Iteration();
-                Console.WriteLine("Epoch #" + epoch + " Error:" + train.Error);
-                epoch++;
-            } while ((epoch <= 20000) && (train.Error > 0.001));
-
-            /*foreach (INeuralDataPair pair in trainingSet)
-            {
-                INeuralData output = network.Compute(pair.Input);
-            }*/
-
-            //////////////////////////////////////////////////////////
-            //testes//////////////////////////////////////////////////////////
-            DateTime datahora_atual = DateTime.MinValue;
-
-            do
-            {
-                DateTime datahora = Simulation.Memory.Get().dmDateTime.datahora;
+                var datahora = Simulation.Memory.Get().dmDateTime.DataHora;
+                var Dados_A = Simulation.Input.Termostato_A();
                 var Dados_D = Simulation.Input.Termostato_D();
                 var Dados_E = Simulation.Input.Termostato_E();
+                var Dados_G = Simulation.Input.Termostato_G();
 
                 if (datahora >= datahora_atual.AddSeconds(.5))
                 {
                     datahora_atual = datahora;
-                    double hora = Normalizacao.Norm_DataHoraSeg(datahora);
+                    var hora = datahora;
 
-                    double TempD = Normalizacao.Norm_Temp(Dados_D.Temperatura);
-                    double SetD = Normalizacao.Norm_Temp(Dados_D.SetPoint);
+                    var TempA = Dados_A.TemperaturaNormalizado;
+                    var SetA = Dados_A.SetPointNormalizado;
 
-                    double TempE = Normalizacao.Norm_Temp(Dados_E.Temperatura);
-                    double SetE = Normalizacao.Norm_Temp(Dados_E.SetPoint);
+                    var TempD = Dados_D.TemperaturaNormalizado;
+                    var SetD = Dados_D.SetPointNormalizado;
 
-                    //BasicMLData dataentradateste = new BasicMLData(new double[] { hora, TempD, SetD, TempE, SetE });
-                    BasicMLData dataentradateste = new BasicMLData(new double[] { hora, TempD, SetD, TempE, SetE });
+                    var TempE = Dados_E.TemperaturaNormalizado;
+                    var SetE = Dados_E.SetPointNormalizado;
 
-                    var classify = network.Classify(dataentradateste);
-                    var dataout = network.Compute(dataentradateste);
+                    var TempG = Dados_G.TemperaturaNormalizado;
+                    var SetG = Dados_G.SetPointNormalizado;
 
+                    var dataEntrada = new BasicMLData(new double[] { TempA, SetA, TempD, SetD, TempE, SetE, TempG, SetG });
 
-                    Console.WriteLine(classify + "||D: " + dataout[0] + " | " + dataout[1] + " ||E: " + dataout[2] + " | " + dataout[3]);
+                    var dataSaida = MLP.Compute(dataEntrada);
 
-                    string saida = "";
-                    if(dataout[0] <= 0.5)
+                    Console.WriteLine("A: " + dataSaida[0] + " | D: " + dataSaida[1] + " | E: " + dataSaida[2] + " | G: " + dataSaida[3]);
+
+                    var saida = "";
+                    if (dataSaida[0] >= 0.5)
                     {
-                        Simulation.Output.LigarHeater_D();
-                        saida += "D: ON";
+                        Simulation.Output.LigarAquecedor_A();
+                        saida += "A: ON";
                     }
                     else
                     {
-                        Simulation.Output.DesligarHeater_D();
-                        saida += "D: OFF";
+                        Simulation.Output.DesligarAquecedor_A();
+                        saida += "A: OFF";
                     }
-                    saida += "  T: " + (Dados_D.Temperatura - Dados_D.SetPoint).ToString("F1") + "   |   " + (Dados_E.Temperatura - Dados_E.SetPoint).ToString("F1");
-                    if (dataout[2] <= 0.5)
+                    saida += "  T: " + (Dados_A.TemperaturaReal - Dados_A.SetPointReal).ToString("F1") + "  |";
+                    /////////////////
+                    if (dataSaida[1] >= 0.5)
                     {
-                        Simulation.Output.LigarHeater_E();
+                        Simulation.Output.LigarAquecedor_D();
+                        saida += " D: ON";
+                    }
+                    else
+                    {
+                        Simulation.Output.DesligarAquecedor_D();
+                        saida += " D: OFF";
+                    }
+                    saida += "  T: " + (Dados_D.TemperaturaReal - Dados_D.SetPointReal).ToString("F1") + "  |";
+                    /////////////////
+                    if (dataSaida[2] >= 0.5)
+                    {
+                        Simulation.Output.LigarAquecedor_E();
                         saida += " E: ON";
                     }
                     else
                     {
-                        Simulation.Output.DesligarHeater_E();
+                        Simulation.Output.DesligarAquecedor_E();
                         saida += " E: OFF";
                     }
-                    Console.WriteLine(saida);
-
-
-                    /*
-                    if (Lista_0.Contains(retorno))
+                    saida += "  T: " + (Dados_E.TemperaturaReal - Dados_E.SetPointReal).ToString("F1") + "  |";
+                    /////////////////
+                    if (dataSaida[3] >= 0.5)
                     {
-                        //desligar
-                        Simulation.Output.DesligarHeater_D();
-                        Simulation.Output.DesligarHeater_E();
-                        Console.WriteLine(retorno + " | OFF | ");
-                    }
-                    else if (Lista_1.Contains(retorno))
-                    {
-                        //ligar
-                        Simulation.Output.LigarHeater_D();
-                        Simulation.Output.LigarHeater_E();
-                        Console.WriteLine(retorno + " | ON | ");
+                        Simulation.Output.LigarAquecedor_G();
+                        saida += " G: ON";
                     }
                     else
                     {
-                        Console.WriteLine(retorno + " | OUT | ");
-                    }*/
+                        Simulation.Output.DesligarAquecedor_G();
+                        saida += " G: OFF";
+                    }
+                    saida += "  T: " + (Dados_G.TemperaturaReal - Dados_G.SetPointReal).ToString("F1") + "  |";
+                    Console.WriteLine(saida);
                 }
-
             }
             while (true);
-
         }
     }
 }

@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SDKConnect.Normalizacao
+namespace SDKConnect
 {
     public static class Normalizacao
     {
         public static double Norm_Temp(float value)
         {
-            double retorno = Normalize(value, -50, 50);//Math.Tanh(value / max);
+            var retorno = Normalize(value, -50, 50);//Math.Tanh(value / max);
             return retorno;
         }
         public static double Norm_Bool(bool value)
@@ -27,7 +27,7 @@ namespace SDKConnect.Normalizacao
             total += value.Minute * 60;
             total += value.Second;
             const double max = 86400;
-            double retorno = Normalize(total, 0, max);// Math.Tanh(total / max);
+            var retorno = Normalize(total, 0, max);// Math.Tanh(total / max);
             return retorno;
         }
 

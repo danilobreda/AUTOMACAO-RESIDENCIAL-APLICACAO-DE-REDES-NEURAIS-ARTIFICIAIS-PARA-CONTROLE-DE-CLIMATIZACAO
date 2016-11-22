@@ -15,11 +15,11 @@ namespace ConsoleDecisaoSimples
         static void Main(string[] args)
         {
             th = new Thread(new ThreadStart(Executa));
-            th.Name = "ThreadTCCSOM";
+            th.Name = "ThreadTCCSimples";
             Console.WriteLine("Iniciando Thread... ");
             th.Start();
             Console.WriteLine("Thread: " + th.Name + " - " + th.ManagedThreadId.ToString());
-            Console.WriteLine("Digite qualquer tecla para cancelar.");
+            Console.WriteLine("Digite qualquer tecla para abortar execucao.");
             Console.ReadKey();
             th.Interrupt();
             th.Abort();
@@ -69,7 +69,7 @@ namespace ConsoleDecisaoSimples
                 bool saida_lumi_D = Decisao.ResultadoJanela(lum_out, temp_D, point_D);
                 bool saida_lumi_E = Decisao.ResultadoJanela(lum_out, temp_E, point_E);
 
-                if (saida_lumi_D == true)
+                /*if (saida_lumi_D == true)
                     Simulation.Output.AbrirJanela_D();
                 else
                     Simulation.Output.FecharJanela_D();
@@ -77,7 +77,7 @@ namespace ConsoleDecisaoSimples
                 if (saida_lumi_E == true)
                     Simulation.Output.AbrirJanela_D();
                 else
-                    Simulation.Output.FecharJanela_D();
+                    Simulation.Output.FecharJanela_D();*/
 
             }
             while (true);

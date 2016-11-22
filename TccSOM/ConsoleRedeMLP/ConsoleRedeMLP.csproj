@@ -39,6 +39,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,6 +56,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\NeuralSOM\NeuralMLP.csproj">
+      <Project>{F4EB3531-25C0-48FE-83C0-4F153C79BAC5}</Project>
+      <Name>NeuralMLP</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SDKConnect\SDKConnect.csproj">
       <Project>{C953F3BF-2947-4106-82DA-7F17D31E09A2}</Project>
       <Name>SDKConnect</Name>
