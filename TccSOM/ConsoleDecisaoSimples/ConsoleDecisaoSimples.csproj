@@ -54,7 +54,7 @@
       <Project>{4020CBCE-FD0F-4B94-8AFD-4215E0A1A6D0}</Project>
       <Name>DecisaoSimples</Name>
     </ProjectReference>
-    <ProjectReference Include="..\NeuralSOM\NeuralSOM.csproj">
+    <ProjectReference Include="..\NeuralSOM\NeuralMLP.csproj">
       <Project>{f4eb3531-25c0-48fe-83c0-4f153c79bac5}</Project>
       <Name>NeuralSOM</Name>
     </ProjectReference>

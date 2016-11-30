@@ -46,12 +46,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Calc_Points.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="DataSensors.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -80,6 +82,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DecisaoSimples\DecisaoSimples.csproj">
+      <Project>{4020CBCE-FD0F-4B94-8AFD-4215E0A1A6D0}</Project>
+      <Name>DecisaoSimples</Name>
+    </ProjectReference>
     <ProjectReference Include="..\SDKConnect\SDKConnect.csproj">
       <Project>{C953F3BF-2947-4106-82DA-7F17D31E09A2}</Project>
       <Name>SDKConnect</Name>

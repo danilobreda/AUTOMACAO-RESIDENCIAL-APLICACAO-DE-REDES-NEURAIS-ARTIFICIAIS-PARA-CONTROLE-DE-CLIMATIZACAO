@@ -136,7 +136,7 @@ namespace ModuloCapturaSimulacao
                 // fileContents.AppendLine(string.Format("{0}::{1}::{2}::{3}::{4}::{5}::{6}", e.Hora.ToString(), e.TempA.ToString(), e.SetA.ToString(), e.TempB.ToString(), e.SetB.ToString(), e.SaidaEsperada.AquecedorA.ToString(), e.SaidaEsperada.AquecedorB.ToString()));
             }
 
-            File.WriteAllText(@"C:\Users\bredi\Documents\AI3\neural.txt", fileContents.ToString());
+            File.WriteAllText(@"C:\Users\bredi\Documents\neuralcapturado.txt", fileContents.ToString());
         }
     }
 }

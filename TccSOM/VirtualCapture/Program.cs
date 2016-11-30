@@ -20,15 +20,15 @@ namespace ModuloCapturaVirtual
             //A
             for (int A = 0; A < total; A++)
             {
-                int SetA = random.Next(5, 30);
-                int SetD = random.Next(5, 30);
-                int SetE = random.Next(5, 30);
-                int SetG = random.Next(5, 30);
+                double SetA = random.Next(5, 30) + random.NextDouble();
+                double SetD = random.Next(5, 30) + random.NextDouble();
+                double SetE = random.Next(5, 30) + random.NextDouble();
+                double SetG = random.Next(5, 30) + random.NextDouble();
 
-                int TempA = random.Next(-20, 50);
-                int TempD = random.Next(-20, 50);
-                int TempE = random.Next(-20, 50);
-                int TempG = random.Next(-20, 50);
+                double TempA = random.Next(-20, 50) + random.NextDouble();
+                double TempD = random.Next(-20, 50) + random.NextDouble();
+                double TempE = random.Next(-20, 50) + random.NextDouble();
+                double TempG = random.Next(-20, 50) + random.NextDouble();
 
                 bool estadoA = false;
                 bool estadoD = false;
@@ -50,14 +50,14 @@ namespace ModuloCapturaVirtual
                 Points p = new Points()
                 {
                     Hora = 0,
-                    SetA = Normalizacao.Norm_Temp(SetA),
-                    TempA = Normalizacao.Norm_Temp(TempA),
-                    SetD = Normalizacao.Norm_Temp(SetD),
-                    TempD = Normalizacao.Norm_Temp(TempD),
-                    SetE = Normalizacao.Norm_Temp(SetE),
-                    TempE = Normalizacao.Norm_Temp(TempE),
-                    SetG = Normalizacao.Norm_Temp(SetG),
-                    TempG = Normalizacao.Norm_Temp(TempG),
+                    SetA = Normalizacao.Norm_Temp((float)SetA),
+                    TempA = Normalizacao.Norm_Temp((float)TempA),
+                    SetD = Normalizacao.Norm_Temp((float)SetD),
+                    TempD = Normalizacao.Norm_Temp((float)TempD),
+                    SetE = Normalizacao.Norm_Temp((float)SetE),
+                    TempE = Normalizacao.Norm_Temp((float)TempE),
+                    SetG = Normalizacao.Norm_Temp((float)SetG),
+                    TempG = Normalizacao.Norm_Temp((float)TempG),
                     SaidaEsperada = new PointsSaida()
                     {
                         AquecedorA = Normalizacao.Norm_Bool(estadoA),

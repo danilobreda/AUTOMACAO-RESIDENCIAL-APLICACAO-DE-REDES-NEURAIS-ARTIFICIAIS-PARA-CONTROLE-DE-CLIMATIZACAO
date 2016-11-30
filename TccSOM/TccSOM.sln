@@ -35,6 +35,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Geracao Graficos", "Geracao
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GeracaoGrafico", "GeracaoGrafico\GeracaoGrafico.csproj", "{19C99A8C-3432-4C08-A7B0-068ADE834AD5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraficoRedeNeural", "GraficoRedeNeural\GraficoRedeNeural.csproj", "{EACA5A05-4D44-4C60-B545-10DFAF806C07}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -77,6 +79,10 @@ Global
 		{19C99A8C-3432-4C08-A7B0-068ADE834AD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19C99A8C-3432-4C08-A7B0-068ADE834AD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19C99A8C-3432-4C08-A7B0-068ADE834AD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EACA5A05-4D44-4C60-B545-10DFAF806C07}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EACA5A05-4D44-4C60-B545-10DFAF806C07}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EACA5A05-4D44-4C60-B545-10DFAF806C07}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EACA5A05-4D44-4C60-B545-10DFAF806C07}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -96,5 +102,6 @@ Global
 		{805D300C-BF65-4EBD-814C-24ABBE56CF49} = {8DC2BC04-BA18-4DF7-9C10-AF2235D599EC}
 		{172425CB-4C90-4278-BA13-147D4F1665ED} = {A67C8233-ADFD-490C-B4CC-60C691D60FA1}
 		{19C99A8C-3432-4C08-A7B0-068ADE834AD5} = {172425CB-4C90-4278-BA13-147D4F1665ED}
+		{EACA5A05-4D44-4C60-B545-10DFAF806C07} = {172425CB-4C90-4278-BA13-147D4F1665ED}
 	EndGlobalSection
 EndGlobal

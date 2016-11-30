@@ -1,0 +1,16 @@
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\bin\Release\ModuloCapturaSimulacao.exe.config
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\bin\Release\ModuloCapturaSimulacao.exe
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\bin\Release\ModuloCapturaSimulacao.pdb
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\bin\Release\DecisaoSimples.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\bin\Release\encog-core-cs.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\bin\Release\MathNet.Numerics.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\bin\Release\NeuralMLP.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\bin\Release\SDKConnect.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\bin\Release\EngineIO.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\bin\Release\DecisaoSimples.pdb
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\bin\Release\NeuralMLP.pdb
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\bin\Release\SDKConnect.pdb
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\bin\Release\MathNet.Numerics.xml
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\obj\Release\ModuloCapturaSimulacao.csprojResolveAssemblyReference.cache
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\obj\Release\ModuloCapturaSimulacao.exe
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\HomeIOSimpleCapture\obj\Release\ModuloCapturaSimulacao.pdb

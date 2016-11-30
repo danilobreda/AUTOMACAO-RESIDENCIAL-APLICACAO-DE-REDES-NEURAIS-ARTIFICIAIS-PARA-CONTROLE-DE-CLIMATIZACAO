@@ -35,49 +35,51 @@ namespace ConsoleDecisaoSimples
 
                 ///////////////////////////////////////
                 //AQUECEDOR
-                float humidade = Simulation.Memory.Get(800).dmClima.humidade;
-                float tempmax = Simulation.Memory.Get(800).dmClima.tempmax;
-                float tempmin = Simulation.Memory.Get(800).dmClima.tempmin;
-                float tempmaxCelcius = tempmax - 273;
-                float tempminCelcius = tempmin - 273;
-
+                var Dados_A = Simulation.Input.Termostato_A();
                 var Dados_D = Simulation.Input.Termostato_D();
-                float temp_D = Dados_D.Temperatura;
-                float point_D = Dados_D.SetPoint;
-
                 var Dados_E = Simulation.Input.Termostato_E();
-                float temp_E = Dados_E.Temperatura;
-                float point_E = Dados_E.SetPoint;
+                var Dados_G = Simulation.Input.Termostato_G();
 
+                bool saida_heater_A = Decisao.ResultadoAquecedorSimplificado(Dados_A.TemperaturaReal, Dados_A.SetPointReal);
+                bool saida_heater_D = Decisao.ResultadoAquecedorSimplificado(Dados_D.TemperaturaReal, Dados_D.SetPointReal);
+                bool saida_heater_E = Decisao.ResultadoAquecedorSimplificado(Dados_E.TemperaturaReal, Dados_E.SetPointReal);
+                bool saida_heater_G = Decisao.ResultadoAquecedorSimplificado(Dados_G.TemperaturaReal, Dados_G.SetPointReal);
 
-                bool saida_heater_D = Decisao.ResultadoAquecedor(humidade, tempmaxCelcius, tempminCelcius, temp_D, point_D);
-                bool saida_heater_E = Decisao.ResultadoAquecedor(humidade, tempmaxCelcius, tempminCelcius, temp_E, point_E);
-
-                if (saida_heater_D == true)
-                    Simulation.Output.LigarHeater_D();
+                if (saida_heater_A)
+                {
+                    Simulation.Output.LigarAquecedor_A();
+                }
                 else
-                    Simulation.Output.DesligarHeater_D();
-
-                if (saida_heater_E == true)
-                    Simulation.Output.LigarHeater_E();
+                {
+                    Simulation.Output.DesligarAquecedor_A();
+                }
+                /////////////////
+                if (saida_heater_D)
+                {
+                    Simulation.Output.LigarAquecedor_D();
+                }
                 else
-                    Simulation.Output.DesligarHeater_E();
-
-                ///////////////////////////////////////
-                //JANELA
-                float lum_out = Simulation.Input.Luminosidade_OutSide();
-                bool saida_lumi_D = Decisao.ResultadoJanela(lum_out, temp_D, point_D);
-                bool saida_lumi_E = Decisao.ResultadoJanela(lum_out, temp_E, point_E);
-
-                /*if (saida_lumi_D == true)
-                    Simulation.Output.AbrirJanela_D();
+                {
+                    Simulation.Output.DesligarAquecedor_D();
+                }
+                /////////////////
+                if (saida_heater_E)
+                {
+                    Simulation.Output.LigarAquecedor_E();
+                }
                 else
-                    Simulation.Output.FecharJanela_D();
-
-                if (saida_lumi_E == true)
-                    Simulation.Output.AbrirJanela_D();
+                {
+                    Simulation.Output.DesligarAquecedor_E();
+                }
+                /////////////////
+                if (saida_heater_G)
+                {
+                    Simulation.Output.LigarAquecedor_G();
+                }
                 else
-                    Simulation.Output.FecharJanela_D();*/
+                {
+                    Simulation.Output.DesligarAquecedor_G();
+                }
 
             }
             while (true);

@@ -1,0 +1,14 @@
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\GeracaoGrafico\obj\Debug\GeracaoGrafico.csprojResolveAssemblyReference.cache
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\GeracaoGrafico\obj\Debug\GeracaoGrafico.frmConsole.resources
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\GeracaoGrafico\obj\Debug\GeracaoGrafico.Properties.Resources.resources
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\GeracaoGrafico\obj\Debug\GeracaoGrafico.csproj.GenerateResource.Cache
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\GeracaoGrafico\bin\Debug\GeracaoGrafico.exe.config
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\GeracaoGrafico\bin\Debug\GeracaoGrafico.exe
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\GeracaoGrafico\bin\Debug\GeracaoGrafico.pdb
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\GeracaoGrafico\bin\Debug\DecisaoSimples.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\GeracaoGrafico\bin\Debug\SDKConnect.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\GeracaoGrafico\bin\Debug\EngineIO.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\GeracaoGrafico\bin\Debug\DecisaoSimples.pdb
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\GeracaoGrafico\bin\Debug\SDKConnect.pdb
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\GeracaoGrafico\obj\Debug\GeracaoGrafico.exe
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\GeracaoGrafico\obj\Debug\GeracaoGrafico.pdb

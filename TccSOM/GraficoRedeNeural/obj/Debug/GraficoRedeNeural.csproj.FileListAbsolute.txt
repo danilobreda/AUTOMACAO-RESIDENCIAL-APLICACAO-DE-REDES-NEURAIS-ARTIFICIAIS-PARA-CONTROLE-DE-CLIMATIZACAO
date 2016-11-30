@@ -1,0 +1,10 @@
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\GraficoRedeNeural\bin\Debug\GraficoRedeNeural.exe.config
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\GraficoRedeNeural\bin\Debug\GraficoRedeNeural.exe
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\GraficoRedeNeural\bin\Debug\GraficoRedeNeural.pdb
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\GraficoRedeNeural\bin\Debug\encog-core-cs.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\GraficoRedeNeural\bin\Debug\SDKConnect.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\GraficoRedeNeural\bin\Debug\EngineIO.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\GraficoRedeNeural\bin\Debug\SDKConnect.pdb
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\GraficoRedeNeural\obj\Debug\GraficoRedeNeural.csprojResolveAssemblyReference.cache
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\GraficoRedeNeural\obj\Debug\GraficoRedeNeural.exe
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\GraficoRedeNeural\obj\Debug\GraficoRedeNeural.pdb

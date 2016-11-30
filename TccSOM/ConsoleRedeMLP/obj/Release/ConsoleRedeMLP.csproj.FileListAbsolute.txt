@@ -8,3 +8,5 @@ C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeMLP\bin\Release\SDKConnect.pdb
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeMLP\obj\Release\ConsoleRedeMLP.csprojResolveAssemblyReference.cache
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeMLP\obj\Release\ConsoleRedeMLP.exe
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeMLP\obj\Release\ConsoleRedeMLP.pdb
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeMLP\bin\Release\NeuralMLP.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\ConsoleRedeMLP\bin\Release\NeuralMLP.pdb

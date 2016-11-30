@@ -44,7 +44,7 @@ namespace NeuralMLP
 
                 epoch++;
             }
-            while ((epoch <= 20000) && (train.Error > 0.001));
+            while ((epoch <= 20000) || (train.Error > 0.001));
         }
 
         public static void LoadNetwork(string nomeArquivo)

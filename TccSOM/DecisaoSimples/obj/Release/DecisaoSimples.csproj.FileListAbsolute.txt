@@ -2,3 +2,4 @@ C:\Users\bredi\Desktop\TCC\TCC\TccSOM\DecisaoSimples\bin\Release\DecisaoSimples.
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\DecisaoSimples\bin\Release\DecisaoSimples.pdb
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\DecisaoSimples\obj\Release\DecisaoSimples.dll
 C:\Users\bredi\Desktop\TCC\TCC\TccSOM\DecisaoSimples\obj\Release\DecisaoSimples.pdb
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\DecisaoSimples\obj\Release\DecisaoSimples.csprojResolveAssemblyReference.cache

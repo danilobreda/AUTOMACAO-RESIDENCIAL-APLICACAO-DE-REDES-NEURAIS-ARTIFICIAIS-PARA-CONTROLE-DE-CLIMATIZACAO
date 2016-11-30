@@ -15,8 +15,28 @@ namespace SDKConnect.Datas
         {
             if (points != null)
             {
-                entrada = entrada.Concat(points.entrada).ToArray();
-                saida = saida.Concat(points.saida).ToArray();
+
+                double[][] newentrada = entrada;
+
+                for (int i = 0; i < (points.entrada.Length - 2); i += 2)
+                {
+                    newentrada[i] = points.entrada[i];
+                }
+
+
+                double[][] newsaida = saida;
+
+
+                for (int i = 0; i < (points.saida.Length - 2); i += 2)
+                {
+                    newsaida[i] = points.saida[i];
+                }
+
+
+                entrada = newentrada;
+                saida = newsaida;
+                //entrada = entrada.Concat(points.entrada).ToArray();
+                //saida = saida.Concat(points.saida).ToArray();
             }
         }
     }

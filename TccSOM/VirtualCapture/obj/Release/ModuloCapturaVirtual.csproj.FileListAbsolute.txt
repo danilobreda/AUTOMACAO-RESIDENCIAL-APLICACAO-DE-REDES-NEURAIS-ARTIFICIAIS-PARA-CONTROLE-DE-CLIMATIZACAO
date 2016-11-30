@@ -1,0 +1,9 @@
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\VirtualCapture\bin\Release\ModuloCapturaVirtual.exe.config
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\VirtualCapture\bin\Release\ModuloCapturaVirtual.exe
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\VirtualCapture\bin\Release\ModuloCapturaVirtual.pdb
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\VirtualCapture\bin\Release\SDKConnect.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\VirtualCapture\bin\Release\EngineIO.dll
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\VirtualCapture\bin\Release\SDKConnect.pdb
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\VirtualCapture\obj\Release\ModuloCapturaVirtual.csprojResolveAssemblyReference.cache
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\VirtualCapture\obj\Release\ModuloCapturaVirtual.exe
+C:\Users\bredi\Desktop\TCC\TCC\TccSOM\VirtualCapture\obj\Release\ModuloCapturaVirtual.pdb
