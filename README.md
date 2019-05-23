@@ -1,6 +1,8 @@
 TÍTULO: AUTOMAÇÃO RESIDENCIAL: APLICAÇÃO DE REDES NEURAIS ARTIFICIAIS PARA CONTROLE DE CLIMATIZAÇÃO.
 AUTOR: Danilo Costa Breda.
 
+Link PDF:http://hdl.handle.net/11077/1591
+
 RESUMO:
 
 Com o avanço da tecnologia, a automação residencial começou a ser mais familiarizada, pelo
