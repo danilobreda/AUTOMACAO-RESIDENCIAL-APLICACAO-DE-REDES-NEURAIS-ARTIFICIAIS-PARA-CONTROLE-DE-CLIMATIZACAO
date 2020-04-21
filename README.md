@@ -1,7 +1,7 @@
 TÍTULO: AUTOMAÇÃO RESIDENCIAL: APLICAÇÃO DE REDES NEURAIS ARTIFICIAIS PARA CONTROLE DE CLIMATIZAÇÃO.
 AUTOR: Danilo Costa Breda.
 
-Link PDF:http://hdl.handle.net/11077/1591
+Link PDF:https://aberto.univem.edu.br/handle/11077/1591
 
 RESUMO:
 
